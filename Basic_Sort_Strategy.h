@@ -4,7 +4,7 @@
 
 class Basic_Sort_Strategy :
 	public ISort_Strategy {
-	virtual void sort(int A, int n, const std::vector<int>& a, const std::vector<int>& C, std::vector<int>& indexes) {
+	virtual void sort(short int A, short int n, const std::vector<short int>& a, const std::vector<short int>& C, std::vector<short int>& indexes) {
 		indexes.reserve(n);
 		for (int i = 0; i < n; ++i)
 			indexes.push_back(i);

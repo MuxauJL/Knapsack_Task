@@ -1,7 +1,7 @@
 #include "Table_Knapsack_Task.h"
 #include <algorithm>
 
-int Table_Knapsack_Task::solve()
+short int Table_Knapsack_Task::solve()
 {
 	for (size_t k = 1; k < n; ++k) {
 		for (size_t w = 0; w <= A; ++w) {
@@ -11,20 +11,20 @@ int Table_Knapsack_Task::solve()
 				f2 = C[k] + (*previous_f)[w - a[k]];
 				if (f1 <= f2) {
 					(*next_f)[w] = f2;
-					std::vector<int>* x_ptr = &x_w_k[pos(w, k)];
+					std::vector<bool>* x_ptr = &x_w_k[pos(w, k)];
 					*x_ptr = x_w_k[pos(w - a[k], k - 1)];
 					x_ptr->push_back(1);
 				}
 				else {
 					(*next_f)[w] = f1;
-					std::vector<int>* x_ptr = &x_w_k[pos(w, k)];
+					std::vector<bool>* x_ptr = &x_w_k[pos(w, k)];
 					*x_ptr = x_w_k[pos(w, k - 1)];
 					x_ptr->push_back(0);
 				}
 			}
 			else {
 				(*next_f)[w] = f1;
-				std::vector<int>* x_ptr = &x_w_k[pos(w, k)];
+				std::vector<bool>* x_ptr = &x_w_k[pos(w, k)];
 				*x_ptr = x_w_k[pos(w, k - 1)];
 				x_ptr->push_back(0);
 			}

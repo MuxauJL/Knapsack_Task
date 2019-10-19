@@ -21,19 +21,19 @@ int main() {
 		"task_3_10_n1000.txt"
 	};
 
-	int A;
-	int n;
-	std::vector<int> a;
-	std::vector<int> C;
+	short int A;
+	short int n;
+	std::vector<short int> a;
+	std::vector<short int> C;
 	Basic_Sort_Strategy basic_strategy;
 
 	std::ofstream time, basic, my;
 	double average = 0;
 	time.open("time.csv");
-	if (time.is_open() && basic.is_open() && my.is_open())
+	if (time.is_open()/* && basic.is_open() && my.is_open()*/)
 	{
 		time << "№;Рекурсивный;Табличный;%;\n";
-		for (size_t i = 0; i < files.size() - 2; ++i) {
+		for (size_t i = 0; i < files.size(); ++i) {
 			//if (i == 8 || i == 9) continue;
 			std::ifstream in(dir + files[i]);
 			if (in.is_open()) {
@@ -95,7 +95,7 @@ int main() {
 			average += difference;
 		}
 	}
-	time << ";;Среднее;" << average / 8 << ";\n";
+	time << ";;Среднее;" << average / 10 << ";\n";
 	time.close();
 	system("pause");
 	return 0;

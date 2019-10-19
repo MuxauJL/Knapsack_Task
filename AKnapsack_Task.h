@@ -3,20 +3,20 @@
 class AKnapsack_Task
 {
 protected:
-	int A;
-	int n;
-	std::vector<int> a;
-	std::vector<int> C;
-	std::vector<int> x;
+	short int A;
+	short int n;
+	std::vector<short int> a;
+	std::vector<short int> C;
+	std::vector<bool> x;
 public:
-	AKnapsack_Task(int A, int n, std::vector<int> a, std::vector<int> C) {
+	AKnapsack_Task(short int A, short int n, std::vector<short int> a, std::vector<short int> C) {
 		this->A = A;
 		this->n = n;
 		this->a = a;
 		this->C = C;
 		x.resize(n, 0);
 	}
-	virtual int solve() = 0;
-	std::vector<int> get_x() { return x; }
+	virtual short int solve() = 0;
+	std::vector<bool> get_x() { return x; }
 };
 

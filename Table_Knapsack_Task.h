@@ -2,17 +2,17 @@
 #include "AKnapsack_Task.h"
 #include <map>
 
-using pos = std::pair<int, int>;
+using pos = std::pair<short int, short int>;
 class Table_Knapsack_Task :
 	public AKnapsack_Task
 {
 private:
-	std::vector<int> v1, v2;
-	std::map<pos, std::vector<int>> x_w_k;
-	std::vector<int>* previous_f;
-	std::vector<int>* next_f;
+	std::vector<short int> v1, v2;
+	std::map<pos, std::vector<bool>> x_w_k;
+	std::vector<short int>* previous_f;
+	std::vector<short int>* next_f;
 public:
-	Table_Knapsack_Task(int A, int n, std::vector<int> a, std::vector<int> C) :
+	Table_Knapsack_Task(short int A, short int n, std::vector<short int> a, std::vector<short int> C) :
 		AKnapsack_Task(A, n, a, C) {
 		v1.reserve(A + 1);
 		v2.reserve(A + 1);
@@ -30,6 +30,6 @@ public:
 			v2.push_back(0);
 		}
 	}
-	virtual int solve();
+	virtual short int solve();
 };
 
