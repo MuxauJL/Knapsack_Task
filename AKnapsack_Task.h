@@ -16,7 +16,8 @@ public:
 		this->C = C;
 		x.resize(n, 0);
 	}
-	virtual short int solve() = 0;
+	short int solve() { return solve(n); };
+	virtual short int solve(short int k) = 0;
 	std::vector<bool> get_x() { return x; }
 };
 

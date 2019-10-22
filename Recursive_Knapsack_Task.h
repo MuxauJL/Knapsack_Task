@@ -12,7 +12,7 @@ private:
 public:
 	Recursive_Knapsack_Task(short int A, short int n, std::vector<short int> a, std::vector<short int> C) :
 		AKnapsack_Task(A, n, a, C) {}
-	virtual short int solve();
+	virtual short int solve(short int k);
 	short int solve_z(short int k, short int w);
 };
 

@@ -1,13 +1,13 @@
 #include "Recursive_Knapsack_Task.h"
 
-short int Recursive_Knapsack_Task::solve()
+short int Recursive_Knapsack_Task::solve(short int k)
 {
-	int result = solve_z(n - 1, A);
-	auto it = cache.find(k_w(n - 1, A));
+	int result = solve_z(k - 1, A);
+	auto it = cache.find(k_w(k - 1, A));
 	if (it != cache.end())
 		x = it->second.second;
 	else
-		throw ("Can't find x*(z(n,A))");
+		throw ("Can't find x*(z(k,A))");
 	return result;
 }
 
@@ -60,5 +60,5 @@ short int Recursive_Knapsack_Task::solve_z(short int k, short int w)
 			z_ptr->second.push_back(0);
 			return f1;
 		}
-	}
+	}	
 }
